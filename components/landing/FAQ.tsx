@@ -17,7 +17,7 @@ export function FAQ() {
   ];
 
   return (
-    <SectionWrapper className="bg-brand-dark/[0.01]">
+    <SectionWrapper>
       <div className="text-center max-w-3xl mx-auto mb-16">
         <Typography variant="H2" className="text-4xl md:text-5xl">Frequently Asked Questions</Typography>
       </div>

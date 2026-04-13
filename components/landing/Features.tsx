@@ -31,7 +31,7 @@ export function Features() {
   const tags = ["Futures", "DeFi", "Degen", "Meme Trading", "NFT Trading"];
 
   return (
-    <SectionWrapper className="bg-brand-dark/[0.015]">
+    <SectionWrapper>
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
         <Typography variant="H2">What does Cheuo-Villa offer?</Typography>
         <Typography variant="Body" className="text-sm md:text-base text-brand-dark/60 font-medium max-w-2xl mx-auto leading-relaxed">
