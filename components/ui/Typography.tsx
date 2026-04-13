@@ -26,10 +26,10 @@ export function Typography({
   const Component = as || elements[variant];
 
   const variants: Record<TypographyVariant, string> = {
-    H1: 'text-4xl md:text-5xl font-bold tracking-tight text-brand-dark',
-    H2: 'text-3xl md:text-4xl font-bold tracking-tight text-brand-dark',
-    H3: 'text-2xl md:text-3xl font-semibold tracking-tight text-brand-dark',
-    Body: 'text-base text-brand-dark/80 font-normal leading-relaxed',
+    H1: 'text-3xl md:text-4xl font-bold tracking-tight text-brand-dark',
+    H2: 'text-2xl md:text-3xl font-bold tracking-tight text-brand-dark',
+    H3: 'text-xl md:text-2xl font-semibold tracking-tight text-brand-dark',
+    Body: 'text-sm md:text-base text-brand-dark/80 font-normal leading-relaxed',
     Caption: 'text-sm text-brand-dark/60 font-medium',
     Label: 'text-sm font-semibold text-brand-dark uppercase tracking-wider',
   };

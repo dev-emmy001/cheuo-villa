@@ -33,8 +33,8 @@ export function Features() {
   return (
     <SectionWrapper className="bg-brand-dark/[0.015]">
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-20">
-        <Typography variant="H2" className="text-4xl md:text-5xl">What does Cheuo-Villa offer?</Typography>
-        <Typography variant="Body" className="text-xl text-brand-dark/60 font-medium max-w-2xl mx-auto leading-relaxed">
+        <Typography variant="H2">What does Cheuo-Villa offer?</Typography>
+        <Typography variant="Body" className="text-sm md:text-base text-brand-dark/60 font-medium max-w-2xl mx-auto leading-relaxed">
           We're building a trading ecosystem in Africa where anyone can learn how the market works without paying tuition.
         </Typography>
       </div>
