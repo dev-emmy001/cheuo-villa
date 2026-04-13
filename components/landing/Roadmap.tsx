@@ -14,13 +14,13 @@ export function Roadmap() {
   return (
     <SectionWrapper>
       <div className="flex flex-col md:flex-row items-center md:items-stretch max-w-6xl mx-auto gap-12 lg:gap-24">
-        
+
         <div className="flex-1 text-center md:text-left flex flex-col justify-center">
           <Typography variant="Label" className="text-brand-blue mb-4 tracking-widest uppercase">The Chronicle Series</Typography>
-          <Typography variant="H2" className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6">
+          <Typography variant="H2" >
             Our 2026 Curriculum Roadmap
           </Typography>
-          <Typography variant="Body" className="text-xl text-brand-dark/60">
+          <Typography className='mt-2.5' variant="Body">
             A structured path through every major market domain, ensuring no stone is left unturned.
           </Typography>
         </div>

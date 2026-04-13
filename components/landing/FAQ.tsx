@@ -19,7 +19,7 @@ export function FAQ() {
   return (
     <SectionWrapper>
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <Typography variant="H2" className="text-4xl md:text-5xl">Frequently Asked Questions</Typography>
+        <Typography variant="H2">Frequently Asked Questions</Typography>
       </div>
 
       <div className="max-w-4xl mx-auto">
