@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
+import Image from 'next/image';
 
 export function Navbar() {
   return (
@@ -9,10 +10,10 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16 px-6 sm:px-8">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-extrabold tracking-tight text-brand-dark font-inter">
-              Cheuo<span className="text-brand-blue">-Villa</span>
+              <Image src="/logos/logo.png" alt="Logo" width={150} height={50} />
             </Link>
           </div>
-          
+
           <nav className="hidden md:flex items-center space-x-10">
             <Link href="/" className="text-sm font-semibold text-brand-dark hover:text-brand-blue transition-colors">
               Home
@@ -24,7 +25,7 @@ export function Navbar() {
               Chronicle
             </Link>
           </nav>
-          
+
           <div className="hidden md:flex items-center">
             <Link href="/chronicle">
               <Button variant="primary" size="sm" className="px-6">Start now</Button>
