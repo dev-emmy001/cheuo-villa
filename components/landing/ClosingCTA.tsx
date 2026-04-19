@@ -29,7 +29,7 @@ export function ClosingCTA() {
         </div>
 
         {/* Right Side: CTA Text */}
-        <div className="flex-1 gap-4 flex flex-col items-start text-left lg:pl-10">
+        <div className="flex-1 gap-4 flex flex-col items-center text-center md:text-left md:items-start md:gap-8 lg:pl-10">
           <Typography variant="H2">
             Ready to give yourself a 6-figure growth chance?
           </Typography>
@@ -40,7 +40,7 @@ export function ClosingCTA() {
 
           <Link href="/chronicle" >
             <Button variant="primary" size="lg" className="h-14 px-10 text-lg shadow-lg">
-              Start your Chronicle
+              Save your sponsored spot
             </Button>
           </Link>
         </div>

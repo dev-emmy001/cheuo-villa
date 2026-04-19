@@ -7,7 +7,7 @@ import { Button } from '../../components/ui/Button';
 import { ProgressBar } from '../../components/ui/ProgressBar';
 import { Card } from '../../components/ui/Card';
 
-// Using basic HTML inputs, styled to match the brand.
+// Using basic HTML inputs.
 const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
   <input
     {...props}
@@ -50,12 +50,12 @@ export default function ChronicleFormPage() {
     // Step 3
     level: '',
     markets: [] as string[],
-    duration: '',
+    // duration: '',
     // Step 4
     whyJoin: '',
     mainGoal: '',
     timeCommitment: '',
-    personality: '',
+    // personality: '',
     // Step 5
     mentorInterest: '',
     privateGroup: '',
@@ -103,25 +103,25 @@ export default function ChronicleFormPage() {
           </div>
 
           <form onSubmit={step === totalSteps ? handleSubmit : (e) => { e.preventDefault(); handleNext(); }}>
-            
+
             {/* STEP 1 */}
             {step === 1 && (
               <div className="space-y-6 animate-fade-in">
                 <Typography variant="H3" className="mb-6">Basic Information</Typography>
-                
+
                 <div>
                   <Typography variant="Label" className="block mb-2 text-brand-dark/70">Full Name</Typography>
-                  <Input required placeholder="Jane Doe" value={formData.fullName} onChange={e => updateForm('fullName', e.target.value)} />
+                  <Input required placeholder="Full Name" value={formData.fullName} onChange={e => updateForm('fullName', e.target.value)} />
                 </div>
-                
+
                 <div>
                   <Typography variant="Label" className="block mb-2 text-brand-dark/70">Email Address</Typography>
-                  <Input required type="email" placeholder="jane@example.com" value={formData.email} onChange={e => updateForm('email', e.target.value)} />
+                  <Input required type="email" placeholder="victor@example.com" value={formData.email} onChange={e => updateForm('email', e.target.value)} />
                 </div>
 
                 <div>
                   <Typography variant="Label" className="block mb-2 text-brand-dark/70">Phone Number / WhatsApp</Typography>
-                  <Input required type="tel" placeholder="+1234567890" value={formData.phone} onChange={e => updateForm('phone', e.target.value)} />
+                  <Input required type="tel" placeholder="" value={formData.phone} onChange={e => updateForm('phone', e.target.value)} />
                 </div>
 
                 <div>
@@ -135,7 +135,7 @@ export default function ChronicleFormPage() {
             {step === 2 && (
               <div className="space-y-6 animate-fade-in">
                 <Typography variant="H3" className="mb-6">Source & Community</Typography>
-                
+
                 <div>
                   <Typography variant="Label" className="block mb-2 text-brand-dark/70">How did you hear about Cheuo-Villa?</Typography>
                   <Select required value={formData.source} onChange={e => updateForm('source', e.target.value)}>
@@ -181,7 +181,7 @@ export default function ChronicleFormPage() {
             {step === 3 && (
               <div className="space-y-6 animate-fade-in">
                 <Typography variant="H3" className="mb-6">Onboarding Category</Typography>
-                
+
                 <div>
                   <Typography variant="Label" className="block mb-3 text-brand-dark/70">Trading Level</Typography>
                   <div className="space-y-3">
@@ -210,7 +210,7 @@ export default function ChronicleFormPage() {
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <Typography variant="Label" className="block mb-3 text-brand-dark/70">Trading Duration</Typography>
                   <Select required value={formData.duration} onChange={e => updateForm('duration', e.target.value)}>
                     <option value="" disabled>Select duration</option>
@@ -219,7 +219,7 @@ export default function ChronicleFormPage() {
                     <option value="1–2 years">1–2 years</option>
                     <option value="2+ years">2+ years</option>
                   </Select>
-                </div>
+                </div> */}
               </div>
             )}
 
@@ -227,7 +227,7 @@ export default function ChronicleFormPage() {
             {step === 4 && (
               <div className="space-y-6 animate-fade-in">
                 <Typography variant="H3" className="mb-6">Commitment & Goals</Typography>
-                
+
                 <div>
                   <Typography variant="Label" className="block mb-2 text-brand-dark/70">Why do you want to join?</Typography>
                   <Textarea required placeholder="Tell us your motivation..." value={formData.whyJoin} onChange={e => updateForm('whyJoin', e.target.value)} rows={4} />
@@ -259,7 +259,7 @@ export default function ChronicleFormPage() {
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <Typography variant="Label" className="block mb-3 text-brand-dark/70">What describes you best?</Typography>
                   <Select required value={formData.personality} onChange={e => updateForm('personality', e.target.value)}>
                     <option value="" disabled>Select option</option>
@@ -267,7 +267,7 @@ export default function ChronicleFormPage() {
                     <option value="Emotional but learning">Emotional but learning</option>
                     <option value="Impulsive">Impulsive</option>
                   </Select>
-                </div>
+                </div> */}
               </div>
             )}
 
@@ -275,7 +275,7 @@ export default function ChronicleFormPage() {
             {step === 5 && (
               <div className="space-y-6 animate-fade-in">
                 <Typography variant="H3" className="mb-6">Add-Ons & Finalization</Typography>
-                
+
                 <div className="p-6 bg-brand-dark/[0.02] rounded-2xl space-y-8">
                   <div>
                     <Typography variant="Label" className="block mb-3 text-brand-dark/80">Interested in becoming a mentor in future cohorts?</Typography>
@@ -326,12 +326,12 @@ export default function ChronicleFormPage() {
             <div className="mt-10 pt-6 border-t border-brand-dark/10 flex items-center justify-between">
               {step > 1 ? (
                 <Button type="button" variant="ghost" onClick={handleBack} className="px-6">
-                  ← Back
+                  Back
                 </Button>
               ) : (
                 <div /> // Placeholder to keep Next button on the right
               )}
-              
+
               {step < totalSteps ? (
                 <Button type="submit" variant="primary" className="px-8 shadow-md">
                   Next Step

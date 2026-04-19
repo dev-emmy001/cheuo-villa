@@ -14,7 +14,7 @@ export function Hero() {
           {/* <Badge color="sky" className="px-5 py-2 shadow-sm bg-white border border-brand-sky/20">The African Wall-Street</Badge> */}
         </div>
 
-        <Typography variant="H1" className="text-5xl sm:text-6xl md:text-7xl !leading-[1.1] tracking-tight font-extrabold max-w-4xl mx-auto">
+        <Typography variant="H1" className="text-4xl sm:text-6xl md:text-7xl !leading-[1.1] tracking-tight font-extrabold max-w-4xl mx-auto">
           Africa's First All-in-One Sponsored Trading Ecosystem
         </Typography>
 
@@ -25,7 +25,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
           <Link href="/chronicle" className="w-full sm:w-auto">
             <Button variant="primary" size="lg" className="w-full h-14 px-10 text-lg">
-              Start your Chronicle
+              Save your sponsored spot
             </Button>
           </Link>
           <Link href="/whitepaper" className="w-full sm:w-auto">

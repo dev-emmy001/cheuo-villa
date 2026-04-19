@@ -2,7 +2,7 @@
 
 @theme {
   --color-brand-blue: #0889CC;
-  --color-brand-dark: #1E1E1E;
+  --color-brand-dark: #f3f4f6; /* Inverted for dark theme text */
   --color-brand-sky: #21BDEB;
   --color-brand-green: #88BE2A;
   
@@ -11,6 +11,7 @@
 
 body {
   font-family: var(--font-montserrat), sans-serif;
-  background-color: #ffffff;
-  color: #1E1E1E;
+  background-color: #121212;
+  color: #f3f4f6;
+  color-scheme: dark;
 }
