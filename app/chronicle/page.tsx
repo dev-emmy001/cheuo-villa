@@ -6,6 +6,7 @@ import { Typography } from '../../components/ui/Typography';
 import { Button } from '../../components/ui/Button';
 import { ProgressBar } from '../../components/ui/ProgressBar';
 import { Card } from '../../components/ui/Card';
+import { submitChronicleApplication } from './actions';
 
 // Using basic HTML inputs.
 const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
@@ -18,7 +19,7 @@ const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
 const Select = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
     {...props}
-    className={`w-full px-4 py-3 rounded-xl border border-brand-dark/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all bg-white ${props.className || ''}`}
+    className={`w-full px-4 py-3 rounded-xl border border-brand-dark/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/30 focus:border-brand-blue transition-all bg-transparent ${props.className || ''}`}
   >
     {props.children}
   </select>
@@ -35,6 +36,8 @@ export default function ChronicleFormPage() {
   const router = useRouter();
   const [step, setStep] = useState(1);
   const totalSteps = 5;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
     // Step 1
@@ -78,11 +81,20 @@ export default function ChronicleFormPage() {
 
   const handleNext = () => setStep(s => Math.min(s + 1, totalSteps));
   const handleBack = () => setStep(s => Math.max(s - 1, 1));
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here we would typically send data to an API
-    console.log('Submitting application:', formData);
-    router.push('/chronicle/thank-you');
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const result = await submitChronicleApplication(formData);
+    
+    setIsSubmitting(false);
+
+    if (result.success) {
+      router.push('/chronicle/thank-you');
+    } else {
+      setSubmitError(result.error || 'An error occurred during submission.');
+    }
   };
 
   const progress = ((step - 1) / (totalSteps - 1)) * 100;
@@ -337,9 +349,12 @@ export default function ChronicleFormPage() {
                   Next Step
                 </Button>
               ) : (
-                <Button type="submit" variant="primary" className="px-8 bg-brand-green border-none text-white hover:bg-brand-green/90 shadow-lg shadow-brand-green/20">
-                  Start your CHRONICLE
-                </Button>
+                <div className="flex flex-col items-end">
+                  <Button type="submit" variant="primary" disabled={isSubmitting} className="px-8 bg-brand-green border-none text-white hover:bg-brand-green/90 shadow-lg shadow-brand-green/20 disabled:opacity-50">
+                    {isSubmitting ? 'Submitting...' : 'Start your CHRONICLE'}
+                  </Button>
+                  {submitError && <span className="text-red-500 text-sm mt-2">{submitError}</span>}
+                </div>
               )}
             </div>
 
