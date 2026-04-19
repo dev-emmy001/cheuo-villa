@@ -91,7 +91,7 @@ export default function ChronicleFormPage() {
     setIsSubmitting(false);
 
     if (result.success) {
-      router.push('/chronicle/thank-you');
+      router.push(`/chronicle/thank-you?name=${encodeURIComponent(formData.fullName)}`);
     } else {
       setSubmitError(result.error || 'An error occurred during submission.');
     }
